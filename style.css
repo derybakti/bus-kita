@@ -10,6 +10,7 @@ body {
 }
 
 header {
+	width: 100%;
 	display: flex;
 	padding: 20px;
 	align-items: center;
@@ -79,6 +80,16 @@ header {
 	-o-transition: 0.5s all;
 }
 
+.showcase {
+	width: 100hh;
+	height: 88vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #f5f5f5;
+	text-align: center;
+}
+
 .content {
 	position: relative;
 	background: url(src/landmark.png) no-repeat center center/cover;
@@ -122,9 +133,12 @@ header {
 
 .image {
 	position: absolute;
-	right: 30px;
+	right: 70px;
 	bottom: 0;
 	rotate: 7deg;
+	animation: stretch-top 2s infinite, stretch 2s infinite;
+	transform-origin: bottom;
+	-webkit-animation: stretch-top 2s infinite, stretch 2s infinite;
 }
 
 .advantages {
@@ -461,6 +475,15 @@ footer .footer .kontak p {
 	-o-border-radius: 10px;
 }
 
+.layanan .container .box-layanan .box:hover {
+	box-shadow: 10px 5px 8px #4a4949;
+	transition: 0.3s all;
+	-webkit-transition: 0.3s all;
+	-moz-transition: 0.3s all;
+	-ms-transition: 0.3s all;
+	-o-transition: 0.3s all;
+}
+
 .layanan .container .box-layanan .box i {
 	display: flex;
 	align-items: center;
@@ -675,4 +698,24 @@ footer .footer .kontak p {
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 20px;
+}
+
+@keyframes stretch {
+	0%,
+	100% {
+		transform: scalex(1);
+		transform: scaley(1.05);
+		-webkit-transform: scaley(1.05);
+		-moz-transform: scaley(1.05);
+		-ms-transform: scaley(1.05);
+		-o-transform: scaley(1.05);
+	}
+	50% {
+		transform: scalex(1.05);
+		transform: scaley(1);
+		-webkit-transform: scalex(1.05);
+		-moz-transform: scalex(1.05);
+		-ms-transform: scalex(1.05);
+		-o-transform: scalex(1.05);
+	}
 }
