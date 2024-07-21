@@ -32,16 +32,19 @@ header {
 	align-items: center;
 }
 
-.nav-list {
+.navlist {
 	display: flex;
 	list-style: none;
 	margin-left: auto;
 	margin-right: 10px;
 	text-decoration: none;
 }
+
 .active {
 	margin-left: 30px;
 	padding: 8px;
+	background-color: #fff;
+	color: #18377a;
 	text-decoration: none;
 	font-weight: 700;
 	font-size: 1rem;
@@ -51,14 +54,12 @@ header {
 	-moz-border-radius: 18px;
 	-ms-border-radius: 18px;
 	-o-border-radius: 18px;
-	background-color: #fff;
-	color: #18377a;
 }
 
 .inactive {
 	margin-left: 30px;
-	color: #fff;
 	padding: 8px;
+	color: #fff;
 	text-decoration: none;
 	font-weight: 700;
 	font-size: 1rem;
@@ -67,30 +68,14 @@ header {
 	-webkit-border-radius: 18px;
 	-moz-border-radius: 18px;
 	-ms-border-radius: 18px;
-	-o-border-radius: 18px;
 }
 
-.nav-list li a:hover {
-	background-color: #fff;
+.navlist li a:hover {
 	color: #18377a;
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-ms-transition: 0.5s all;
-	-o-transition: 0.5s all;
+	background-color: #fff;
 }
 
 .showcase {
-	width: 100hh;
-	height: 88vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: #f5f5f5;
-	text-align: center;
-}
-
-.content {
 	position: relative;
 	background: url(src/landmark.png) no-repeat center center/cover;
 	z-index: -1;
@@ -109,26 +94,24 @@ header {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(85, 68, 241, 0.3);
-	opacity: 0.7;
+	background: rgba(85, 68, 241, 0.3);
 	z-index: -1;
 }
 
-.content .textContent {
+.content .textcontent {
 	padding: 20px;
 	margin-left: 50px;
 	color: #fdfdfd;
 }
 
-.content .textContent h1 {
+.content .textcontent h1 {
 	font-size: 3rem;
+	margin-bottom: 10px;
 }
 
-.content .textContent p {
+.content .textcontent p {
 	font-size: 1.2rem;
-	margin: 20px 0;
-	color: #f5f5f5;
-	font-weight: 800;
+	margin-bottom: 10px;
 }
 
 .image {
@@ -138,12 +121,11 @@ header {
 	rotate: 7deg;
 	animation: stretch-top 2s infinite, stretch 2s infinite;
 	transform-origin: bottom;
-	-webkit-animation: stretch-top 2s infinite, stretch 2s infinite;
 }
 
 .advantages {
-	background-color: #f5f5f5;
 	padding: 20px;
+	background-color: #f5f5f5;
 	display: flex;
 	align-items: center;
 	height: 100vh;
@@ -157,35 +139,37 @@ header {
 }
 
 .advantages .container .isi .judul h1 {
-	text-align: center;
 	font-size: 2.5rem;
+	text-align: center;
 	padding: 20px;
 	width: fit-content;
 	border-bottom: 3px solid #18377a;
 }
 
-.advantages .container .cards {
+.advantages .container .isi .cards {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.advantages .container .cards .card {
+.advantages .container .isi .cards .card {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	margin: 20px;
 	text-align: center;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 20px;
 }
 
-.advantages .container .cards .card .icon {
+.advantages .container .isi .cards .card .icon {
 	font-size: 3rem;
+	margin-bottom: 40px;
 	color: #f5f5f5;
 	background-color: #18377a;
 	width: 100px;
 	height: 100px;
-	border-radius: 50%;
+	border-radius: 50px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -262,13 +246,78 @@ header {
 	-o-border-radius: 5px;
 }
 
+/* Gaya untuk tombol utama */
+#openFormButton {
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+/* Gaya untuk modal */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+	padding-top: 60px;
+}
+
+/* Gaya untuk konten modal */
+.modal-content {
+	background-color: #fefefe;
+	margin: 5% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+}
+
+/* Gaya untuk tombol close */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+#kirim {
+	background-color: #18377a;
+	color: #f5f5f5;
+	width: 10rem;
+	padding: 10px;
+	margin-top: 20px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+
 .popular .container .popular-content .popular-card .card1:hover {
 	box-shadow: 10px 5px 8px #25252513;
-	transition: 0.3s all;
-	-webkit-transition: 0.3s all;
-	-moz-transition: 0.3s all;
-	-ms-transition: 0.3s all;
-	-o-transition: 0.3s all;
+	transition: 0.3 all;
+	-webkit-transition: 0.3 all;
+	-moz-transition: 0.3 all;
+	-ms-transition: 0.3 all;
+	-o-transition: 0.3 all;
 }
 
 footer {
@@ -309,8 +358,7 @@ footer .footer .kontak p {
 	margin-top: 25px;
 }
 
-/* tentang kami */
-
+/* Tentang Kami */
 .about .container {
 	background-color: rgba(214, 250, 250, 0.493);
 	height: 88vh;
@@ -338,15 +386,7 @@ footer .footer .kontak p {
 	text-align: justify;
 }
 
-.about .container .image {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	top: 7rem;
-	left: -2px;
-}
-
-/* testimoni */
+/* Testimoni */
 .testimoni {
 	padding: 20px;
 	display: flex;
@@ -409,6 +449,10 @@ footer .footer .kontak p {
 	align-items: center;
 	justify-content: center;
 	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
 }
 
 .testimoni .container .isi .cards .card .icon p {
@@ -418,7 +462,7 @@ footer .footer .kontak p {
 	margin-left: 10px;
 }
 
-/* layanan */
+/* Layanan */
 .layanan .container {
 	background-color: rgba(214, 250, 250, 0.493);
 	height: 120vh;
@@ -428,6 +472,14 @@ footer .footer .kontak p {
 	justify-content: center;
 	align-items: center;
 	padding: 0 30px;
+}
+
+.layanan .container .title {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 100px;
 }
 
 .layanan .container .title {
@@ -448,7 +500,7 @@ footer .footer .kontak p {
 
 .layanan .container .title p {
 	margin-top: 25px;
-	text-align: justify;
+	text-align: center;
 }
 
 .layanan .container .box-layanan {
@@ -498,7 +550,7 @@ footer .footer .kontak p {
 	margin-left: 10px;
 }
 
-/* Kontak */
+/* kontak */
 .kontak {
 	padding: 20px;
 	display: flex;
@@ -556,6 +608,7 @@ footer .footer .kontak p {
 	width: 25rem;
 	text-align: center;
 	text-decoration: none;
+	cursor: pointer;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -614,7 +667,7 @@ footer .footer .kontak p {
 	margin-left: 40px;
 }
 
-/* Tarif */
+/* tarif */
 .tarif {
 	margin: 0;
 }
@@ -658,11 +711,11 @@ footer .footer .kontak p {
 
 .tarif .container .boxes .box:hover {
 	box-shadow: 10px 5px 8px #2d2c2c;
-	transition: 0.3s all;
-	-webkit-transition: 0.3s all;
-	-moz-transition: 0.3s all;
-	-ms-transition: 0.3s all;
-	-o-transition: 0.3s all;
+	transition: 0.3 all;
+	-webkit-transition: 0.3 all;
+	-moz-transition: 0.3 all;
+	-ms-transition: 0.3 all;
+	-o-transition: 0.3 all;
 }
 
 .tarif .container .boxes .box .atas {
@@ -671,12 +724,20 @@ footer .footer .kontak p {
 	align-items: center;
 }
 
+.tarif .container .boxes .box .bawah {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+}
+
 .tarif .container .boxes .box .bawah a {
 	font-size: 1rem;
 	background-color: #3256a4;
 	color: #f5f5f5;
 	text-decoration: none;
 	padding: 5px;
+	cursor: pointer;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -686,18 +747,11 @@ footer .footer .kontak p {
 
 .tarif .container .boxes .box .bawah a:hover {
 	background-color: #18377a;
-	transition: 0.3s all;
-	-webkit-transition: 0.3s all;
-	-moz-transition: 0.3s all;
-	-ms-transition: 0.3s all;
-	-o-transition: 0.3s all;
-}
-
-.tarif .container .boxes .box .bawah {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 20px;
+	transition: 0.3 all;
+	-webkit-transition: 0.3 all;
+	-moz-transition: 0.3 all;
+	-ms-transition: 0.3 all;
+	-o-transition: 0.3 all;
 }
 
 @keyframes stretch {
@@ -713,9 +767,9 @@ footer .footer .kontak p {
 	50% {
 		transform: scalex(1.05);
 		transform: scaley(1);
-		-webkit-transform: scalex(1.05);
-		-moz-transform: scalex(1.05);
-		-ms-transform: scalex(1.05);
-		-o-transform: scalex(1.05);
+		-webkit-transform: scaley(1);
+		-moz-transform: scaley(1);
+		-ms-transform: scaley(1);
+		-o-transform: scaley(1);
 	}
 }
